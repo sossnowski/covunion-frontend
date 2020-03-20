@@ -5,9 +5,9 @@ import fontSize from '../consts/fontSize'
 
 
 export default class MarketList extends React.Component {
-    static navigationOptions = {
-        header: null,
-    };
+    // static navigationOptions = {
+    //     header: null,
+    // };
     constructor(props) {
         super(props);
         this.state = {
@@ -128,7 +128,6 @@ const styles = StyleSheet.create({
         //alignItems: 'center',
         //justifyContent: 'center',
         color: 'black',
-        marginTop: 20,
         width: '100%'
     },
     activeTopOption: {
@@ -152,7 +151,6 @@ const styles = StyleSheet.create({
     topOptionsWrapper: {
         width: '100%',
         flexDirection: 'row',
-        marginTop: 10,
     },
     topOptionText1: {
         fontSize: fontSize.h3,

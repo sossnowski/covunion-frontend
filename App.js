@@ -22,7 +22,7 @@ const RootStack = createStackNavigator({
       MarketList: { screen: MarketList }
 
     },{
-      initialRouteName: 'MarketList'
+      initialRouteName: 'Home'
     }
 );const AppContainer = createAppContainer(RootStack);
 
