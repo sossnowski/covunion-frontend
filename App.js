@@ -9,17 +9,20 @@ import Register from "./screens/Register";
 import NotificationBoard from "./screens/notificationBoard";
 import Contact from "./screens/Contact";
 import TypesOfPrevention from "./screens/typesOfPrevention";
-const RootStack = createStackNavigator(
-    {
+import MarketList from './screens/MarketList'
+
+
+const RootStack = createStackNavigator({
       Home: {screen: Home},
-      Login:{screen:Login},
+      Login: {screen:Login},
       Register: {screen: Register},
-      NotificationBoard:{screen: NotificationBoard},
+      NotificationBoard: {screen: NotificationBoard},
       Contact: {screen: Contact},
-      TypesOfPrevention: {screen: TypesOfPrevention}
+      TypesOfPrevention: {screen: TypesOfPrevention},
+      MarketList: { screen: MarketList }
 
     },{
-      initialRouteName: 'Home'
+      initialRouteName: 'MarketList'
     }
 );const AppContainer = createAppContainer(RootStack);
 
