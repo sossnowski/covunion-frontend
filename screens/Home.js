@@ -31,6 +31,10 @@ export default class Home extends React.Component {
                             onPress={() => this.props.navigation.navigate('MarketList')}
                             title={'market list'}
                         />
+                    <Button
+                        onPress={() => this.props.navigation.navigate('Select')}
+                        title={'MainPage'}
+                    />
                 </View>
             )
         }
