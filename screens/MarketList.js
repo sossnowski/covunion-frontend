@@ -88,7 +88,7 @@ export default class MarketList extends React.Component {
     }
 
     goToAdScreen = (ad) => {
-        this.props.navigation.navigate('ScreenMarola', {ad: ad});
+        this.props.navigation.navigate('Advertisement', {ad: ad});
     }
 
 
@@ -109,7 +109,7 @@ export default class MarketList extends React.Component {
                     <FlatList
                         data={this.state.listData}
                         renderItem={({item}) =>
-                            <TouchableOpacity style={styles.listField} onPress={this.goToAdScreen(item)}>
+                            <TouchableOpacity style={styles.listField} onPress={() => this.goToAdScreen(item)}>
                                 <Text style={styles.listFieldText}>{item.title}</Text>
                                 <Text style={styles.listFieldLocalisationText}>{item.localization + ' ul.' + item.address}</Text>
                             </TouchableOpacity> }

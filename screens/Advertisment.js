@@ -5,26 +5,28 @@ import { ScrollView, RectButton } from 'react-native-gesture-handler';
 
 
 
-export default class AdvertismentView extends React.Component{
+export default class AdvertisementView extends React.Component{
     constructor(props){
         super(props);
+        const navigationData = this.props.navigation.state.params.ad;
         this.state = {
-            ideas:{
-                "_id": "5e74d4ad499ecf6fe9a182b8",
-                "title": "ogloszenie checi wziecia pomocy",
-                "description": "jakies opis",
-                "user": "kbrzoska97@gmail.com",
-                "localization": "stalowa wola ul. jakas",
-                "date": "2020-03-20T14:35:25.823Z",
-                "coordinates": "none",
-                "needHelp": true,
-                "__v": 0
-            }
+            // advertisement:{
+            //     "_id": "5e74d4ad499ecf6fe9a182b8",
+            //     "title": "ogloszenie checi wziecia pomocy",
+            //     "description": "jakies opis",
+            //     "user": "kbrzoska97@gmail.com",
+            //     "localization": "stalowa wola ul. jakas",
+            //     "date": "2020-03-20T14:35:25.823Z",
+            //     "coordinates": "none",
+            //     "needHelp": true,
+            //     "__v": 0
+            // }
+            advertisement: navigationData
         }
     }
 
     needHelp(){
-        if(this.state.ideas.needHelp==true){
+        if(this.state.advertisement.needHelp==true){
             return "need your help!! :)";
         } else return "wanna help you!! :)"
     }
@@ -34,14 +36,14 @@ export default class AdvertismentView extends React.Component{
 
             <View style={styles.container}>
                 <View style={styles.top_bar}>
-        <Text style={styles.needHelpText}>{this.state.ideas.user}{this.needHelp()}</Text>
+        <Text style={styles.needHelpText}>{this.state.advertisement.user}{this.needHelp()}</Text>
                 </View>
                 <View style={styles.localization_date}>
-                    <View><Text>{this.state.ideas.localization}</Text></View>
-                    <View><Text>{this.state.ideas.date}</Text></View>
+                    <View><Text>{this.state.advertisement.localization}</Text></View>
+                    <View><Text>{this.state.advertisement.date}</Text></View>
                 </View>
-                <View style={styles.title}><Text style={{fontSize:20}}>{this.state.ideas.title}</Text></View>
-                <View style={styles.description}><Text>{this.state.ideas.description}</Text></View>
+                <View style={styles.title}><Text style={{fontSize:20}}>{this.state.advertisement.title}</Text></View>
+                <View style={styles.description}><Text>{this.state.advertisement.description}</Text></View>
             </View>
         );
     }
