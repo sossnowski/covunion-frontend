@@ -10,6 +10,7 @@ import NotificationBoard from "./screens/notificationBoard";
 import Contact from "./screens/Contact";
 import TypesOfPrevention from "./screens/typesOfPrevention";
 import Select from "./screens/Select";
+import Advertisment from "./screens/Advertisment";
 const RootStack = createStackNavigator(
     {
       Home: {screen: Home},
@@ -18,7 +19,8 @@ const RootStack = createStackNavigator(
       NotificationBoard:{screen: NotificationBoard},
       Contact: {screen: Contact},
       TypesOfPrevention: {screen: TypesOfPrevention},
-      Select: {screen: Select}
+      Select: {screen: Select},
+      Advertisment: {screen: Advertisment},
 
     },{
       initialRouteName: 'Home'
@@ -28,7 +30,7 @@ const RootStack = createStackNavigator(
 export default class App extends React.Component{
   render() {
     return (
-        <AppContainer/>
+        <AppContainer style={{flexDirection:1}}/>
     );
   }
 }

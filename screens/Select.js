@@ -13,7 +13,7 @@ export default class SelectRoleMarketView extends React.Component{
                 <View style={styles.container}>
                     <View style={styles.box}>
                         <Button
-                            onPress={() => this.props.navigation.navigate('Select')}
+                            onPress={() => this.props.navigation.navigate('Advertisment')}
                             title={'M'}
                         />
                     </View>
