@@ -9,6 +9,7 @@ import Register from "./screens/Register";
 import NotificationBoard from "./screens/notificationBoard";
 import Contact from "./screens/Contact";
 import TypesOfPrevention from "./screens/typesOfPrevention";
+import Select from "./screens/Select";
 const RootStack = createStackNavigator(
     {
       Home: {screen: Home},
@@ -16,7 +17,8 @@ const RootStack = createStackNavigator(
       Register: {screen: Register},
       NotificationBoard:{screen: NotificationBoard},
       Contact: {screen: Contact},
-      TypesOfPrevention: {screen: TypesOfPrevention}
+      TypesOfPrevention: {screen: TypesOfPrevention},
+      Select: {screen: Select}
 
     },{
       initialRouteName: 'Home'
