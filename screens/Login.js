@@ -11,8 +11,8 @@ export default class LoginFormView extends React.Component{
 
     logIn = async () => {
         Keyboard.dismiss();
-        const { username, password} = this.state
-        if(username!=''&& password!='') console.log('zalogowano')
+        const { username, password} = this.state;
+        if(username!=''&& password!='') console.log('zalogowano');
         else console.log('zle pasy'); 
         };
 

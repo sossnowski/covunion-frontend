@@ -1,7 +1,6 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
 import { StyleSheet, Text, View} from 'react-native';import 'react-native-gesture-handler';
-import { StyleSheet } from 'react-native';
 import {createStackNavigator} from "react-navigation-stack";
 import Home from "./screens/Home";
 import Login from "./screens/Login";
