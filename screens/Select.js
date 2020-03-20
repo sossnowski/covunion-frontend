@@ -11,8 +11,18 @@ export default class SelectRoleMarketView extends React.Component{
         return(
             <View style={{flex:0.6, backgroundColor:'lightblue', width: 300, marginTop: 50, marginLeft:10}}>
                 <View style={styles.container}>
-                    <View style={styles.box}><Text style={styles.text}>M</Text></View>
-                    <View style={styles.box}><Text style={styles.text}>L</Text></View>
+                    <View style={styles.box}>
+                        <Button
+                            onPress={() => this.props.navigation.navigate('Select')}
+                            title={'M'}
+                        />
+                    </View>
+                    <View style={styles.box}>
+                        <Button
+                            onPress={() => this.props.navigation.navigate('Select')}
+                            title={'L'}
+                        />    
+                    </View>
                 </View>                   
             </View>
         );
