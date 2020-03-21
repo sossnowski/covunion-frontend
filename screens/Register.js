@@ -38,7 +38,10 @@ export default class RegisterFormView extends React.Component{
             <ScrollView ref='scrollView' contentContainerStyle={styles.scllorer}>
                 <View style={styles.container}>
                     <View style={styles.main_container}>
-                    <Text style={styles.title}>Join us</Text>
+                        <Image
+                            source={require('../consts/icons/logo1.png')}
+                        />
+                        <Text style={styles.title}>Join us</Text>
                         <TextInput
                             style={styles.input}
                             placeholder="Username"
@@ -95,25 +98,24 @@ const styles = StyleSheet.create({
     },
     main_container: {
         width: "90%",
-        height: "80%",
-        backgroundColor: colors.second,
+        height: "65%",
+        backgroundColor: colors.main,
         alignItems: "center",
         justifyContent: 'center',
-        marginTop: 70,
-        borderRadius: 14,
+        marginTop: 20,
     },
     input: {
-        width: "80%",
-        height: "13%",
+        width: "98%",
+        height: "11%",
         backgroundColor: colors.options,
         margin: 10,
         padding: 8,
         color: colors.placeHolderColor,
-        borderRadius: 14,
         fontSize: fonts.h3,
         fontWeight: '300',
       },
     title:{
+        marginTop: 40,
         fontSize: fonts.h2
     }
 })
