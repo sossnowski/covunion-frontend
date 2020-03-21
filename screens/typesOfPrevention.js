@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Text, View, Button, FlatList, StyleSheet} from 'react-native';
-import {ListItem} from "react-native-elements";
+import { ListItem } from 'react-native-elements'
 import EachIdea from "./EachIdea";
 import colors from '../consts/colors'
 import fontSize from '../consts/fontSize'
@@ -34,6 +34,7 @@ export default class TypesOfPrevention extends React.Component{
 
     constructor(props) {
         super(props);
+        let info;
         this.state = {
             listData: [],
             loading: true,
@@ -45,7 +46,7 @@ export default class TypesOfPrevention extends React.Component{
 
     componentDidMount(){
         this.getIdeas().then(result => {
-            console.log(this.state.listData.ideas);
+            this.info = this.state.listData.ideas;
         })
     }
 
@@ -53,10 +54,10 @@ export default class TypesOfPrevention extends React.Component{
     getIdeas = async () => {
         try{
             let result = await IdeasRequest();
-            console.log('hello from ideas');
             this.setState({
                 listData: result
-            })
+            });
+            console.log(this.state.listData.ideas);
         } catch (error) {
             console.log(error)
         }
