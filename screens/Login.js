@@ -23,7 +23,7 @@ export default class LoginFormView extends React.Component{
             <ScrollView ref='scrollView' contentContainerStyle={styles.scllorer}> 
                 <View style={styles.container}>
                     <Image
-                        source={require('../consts/icons/logo.png')}
+                        source={require('../consts/icons/logoM.png')}
                         style={{marginTop:20}}
                     />
                     <View style={styles.main_container}>
@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
         fontWeight: '300',
       },
     title:{
-        fontSize: fonts.h2,
-        marginBottom: 20
+        fontSize: fonts.h3,
+        marginBottom: 20,
+        fontWeight: '500'
     }
 })

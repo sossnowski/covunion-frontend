@@ -56,7 +56,7 @@ export default class RegisterFormView extends React.Component{
                 <View style={styles.container}>
                     <View style={styles.main_container}>
                         <Image
-                            source={require('../consts/icons/logo.png')}
+                            source={require('../consts/icons/logoM.png')}
                         />
                         <Text style={styles.title}>Join us</Text>
                         <TextInput
@@ -101,8 +101,7 @@ export default class RegisterFormView extends React.Component{
                     show={showAlert}
                     showProgress={false}
                     title="Succesfull!"
-                    message="Thank you for signing up! 
-                                        Let's start!"
+                    message="Thank you for signing up!"
                     closeOnTouchOutside={true}
                     closeOnHardwareBackPress={false}
                     showConfirmButton={true}
@@ -148,6 +147,8 @@ const styles = StyleSheet.create({
       },
     title:{
         marginTop: 40,
-        fontSize: fonts.h2
+        fontSize: fonts.h3,
+        marginBottom: 20,
+        fontWeight: '500'
     }
 })

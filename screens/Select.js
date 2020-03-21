@@ -12,10 +12,13 @@ export default class SelectRoleMarketView extends React.Component{
     render(){
         return(
             <View style={styles.main_controler}>
+                <Image
+                    source={require('../consts/icons/logoM.png')}
+                />
                 <View style={styles.container}>
                     <View style={styles.container}>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('MarketList')}>
-                            <View>
+                        <TouchableOpacity style={styles.image} onPress={() => this.props.navigation.navigate('MarketList')}>
+                            <View style={styles.box}>
                                 <Image
                                     source={require('../consts/icons/checklistbig.png')}
                                 />
@@ -29,7 +32,7 @@ export default class SelectRoleMarketView extends React.Component{
                                 borderBottomWidth: 1,
                             }}
                         />
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('MarketList')}>
+                        <TouchableOpacity style={styles.image} onPress={() => this.props.navigation.navigate('MarketList')}>
                             <View>
                                 <Image
                                     source={require('../consts/icons/helpcolorbig.png')}
@@ -49,24 +52,23 @@ const styles = StyleSheet.create({
         backgroundColor: colors.main, 
         width: "100%", 
         height: '100%',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        alignItems: 'center',
     },
     container:{
         alignItems:"center",
         justifyContent: 'space-around',
         flex:1,
         flexDirection: 'column',
-        marginVertical: 35,
+        marginBottom: 25,
+        marginTop: 10
     },
-    box: {
-        width: "30%",
-        height: "22%",
-        backgroundColor: colors.second,
-        borderStyle: 'solid',
-        borderLeftWidth: 5,
-        borderTopWidth: 5,
-        borderRadius: 10,
-        alignItems:'center',
-        justifyContent: 'center'
-    },
+    image:{
+        width: "100%",
+        height: "35%",
+        alignItems: 'center',
+        paddingHorizontal: 50,
+        paddingTop: 40
+
+    }
 })
