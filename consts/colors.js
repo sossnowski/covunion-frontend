@@ -1,6 +1,7 @@
-export default  {
-    main: "white",
-    second: "gray",
+export default colors=  {
+    main: "#f1f7f1",
+    second: "#d6d7d6",
     options: "#fafafa",
-    acceptButton: "green"
+    acceptButton: "#2168ce",
+    placeHolderColor: "black",
 }

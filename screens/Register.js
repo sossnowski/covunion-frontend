@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, NativeModules, TextInput, Button, Keyboard } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-
+import colors from "../consts/colors";
+import fonts from "../consts/fontSize";
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default class RegisterFormView extends React.Component{
     constructor(props){
@@ -33,9 +35,10 @@ export default class RegisterFormView extends React.Component{
 
     render(){
         return(
-            <ScrollView>
+            <ScrollView ref='scrollView' contentContainerStyle={styles.scllorer}>
                 <View style={styles.container}>
                     <View style={styles.main_container}>
+                    <Text style={styles.title}>Join us</Text>
                         <TextInput
                             style={styles.input}
                             placeholder="Username"
@@ -68,7 +71,7 @@ export default class RegisterFormView extends React.Component{
                             onSubmitEditing={()=>{this.signUp()}}
                         />
                         <Button
-                            style={styles.button}
+                            color= {colors.acceptButton}
                             title='Sign Up'
                             onPress={ this.signUp}
                         />
@@ -82,36 +85,35 @@ export default class RegisterFormView extends React.Component{
 const styles = StyleSheet.create({
     container: {
         flex:1,
-        backgroundColor: 'skyblue',
+        backgroundColor: colors.main,
         alignItems: "center",
 
     },
+    scllorer:{
+        flex: 1,
+        flexDirection: 'column'
+    },
     main_container: {
-        width: 300,
-        height: 500,
-        backgroundColor: 'skyblue',
+        width: "90%",
+        height: "80%",
+        backgroundColor: colors.second,
         alignItems: "center",
         justifyContent: 'center',
-        marginTop: 30,
+        marginTop: 70,
+        borderRadius: 14,
     },
     input: {
-        width: 250,
-        height: 55,
-        backgroundColor: '#42A5F5',
+        width: "80%",
+        height: "13%",
+        backgroundColor: colors.options,
         margin: 10,
         padding: 8,
-        color: 'grey',
+        color: colors.placeHolderColor,
         borderRadius: 14,
-        fontSize: 18,
+        fontSize: fonts.h3,
         fontWeight: '300',
       },
-    text:{
-        padding: 10,
-        fontSize: 42
-    },
-    button:{
-        width: 200,
-        height:85,
-        borderRadius: 2,
+    title:{
+        fontSize: fonts.h2
     }
 })
