@@ -4,11 +4,12 @@ import { ScrollView } from 'react-native-gesture-handler';
 import colors from "../consts/colors";
 import fonts from "../consts/fontSize";
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import AwesomeAlert from 'react-native-awesome-alerts';
 
 export default class RegisterFormView extends React.Component{
     constructor(props){
         super(props);
-        this.state = {username: '', email:'', password:''};
+        this.state = {username: '', email:'', password:'', showAlert: false};
     }
     onChangeText = (key, val) => {this.setState({ [key]: val })};
 
@@ -18,7 +19,10 @@ export default class RegisterFormView extends React.Component{
          if(username.length<6) console.log('Username must be 5 characters at least');
          if(username=='' || email==''|| password=='') console.log('Every fields are require');
          if(password.length<8) console.log('Password must be 8 chars at least');
-         else console.log('Udalo sie');
+         else {
+             console.log("dziala");
+             this.showAlert();
+         }
         };
     validateEmail = (text) => {
         let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -32,14 +36,27 @@ export default class RegisterFormView extends React.Component{
             console.log("Email is Correct");
         }
     };
+    showAlert = () => {
+        console.log("funkcja")
+        this.setState({
+          showAlert: true
+        });
+      };
+     
+      hideAlert = () => {
+        this.setState({
+          showAlert: false
+        });
+      };
 
     render(){
+        const {showAlert} = this.state;
         return(
             <ScrollView ref='scrollView' contentContainerStyle={styles.scllorer}>
                 <View style={styles.container}>
                     <View style={styles.main_container}>
                         <Image
-                            source={require('../consts/icons/logo1.png')}
+                            source={require('../consts/icons/logo.png')}
                         />
                         <Text style={styles.title}>Join us</Text>
                         <TextInput
@@ -80,6 +97,21 @@ export default class RegisterFormView extends React.Component{
                         />
                     </View>
                 </View>
+                <AwesomeAlert
+                    show={showAlert}
+                    showProgress={false}
+                    title="Succesfull!"
+                    message="Thank you for signing up! 
+                                        Let's start!"
+                    closeOnTouchOutside={true}
+                    closeOnHardwareBackPress={false}
+                    showConfirmButton={true}
+                    confirmText="Start"
+                    confirmButtonColor='#186FF2'
+                    onConfirmPressed={() => {
+                        this.hideAlert();
+                    }}
+                />
             </ScrollView>
         );
     }
