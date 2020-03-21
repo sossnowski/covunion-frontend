@@ -20,11 +20,8 @@ export default class MarketList extends React.Component {
     }
 
     componentDidMount(){
-        //this.getListData(this.state.ownTask)
         this.getTasks().then(result => {
-            this.setState({
-                taskDataFromDb: result
-            })
+            this.getListData(this.state.ownTask)
         })
 
     }
@@ -33,6 +30,9 @@ export default class MarketList extends React.Component {
         try{
             let result = await tasksRequest()
             console.log(result)
+            this.setState({
+                taskDataFromDb: result.tasks
+            })
         } catch (error) {
             console.log(error)
         }
@@ -42,12 +42,12 @@ export default class MarketList extends React.Component {
     getListData = (value) => {
         let listData = []
         if (value) {
-            listData = this.state.objFromDb.filter(obj => {
+            listData = this.state.taskDataFromDb.filter(obj => {
                 return obj.owner === this.state.myEmail
 
             })
         } else {
-            listData = this.state.objFromDb.filter(obj => {
+            listData = this.state.taskDataFromDb.filter(obj => {
                 return obj.owner !== this.state.myEmail
 
             })
@@ -88,8 +88,8 @@ export default class MarketList extends React.Component {
                     <FlatList
                         data={this.state.listData}
                         renderItem={({item}) =>
-                            <TouchableOpacity style={styles.listField} onPress={() => this.goToAdScreen(item)}>
-                                <Text style={styles.listFieldText}>{(this.state.ownTask === true) ?  (item.executor + ' taken it') : ('task from: ' + item.owner)}</Text>
+                            <TouchableOpacity style={styles.listField} onPress={() => this.goToAdScreen(item.advertisement)}>
+                                <Text style={styles.listFieldText}>{item.advertisement.title}</Text>
                                 <Text style={styles.listFieldLocalisationText}>Telephone { (this.state.ownTask === true) ?  item.executorTelephone  :  item.ownerTelephone}</Text>
                             </TouchableOpacity> }
                     />
