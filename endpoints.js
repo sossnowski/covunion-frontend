@@ -20,5 +20,6 @@ export default {
 
     },
     getAllMyTasks: api + "market/allMyTasks",
-    getAllIdeas: api + "idea/allIdeas"
+    getAllIdeas: api + "idea/allIdeas",
+    voteAnIdea: api + "idea/vote"
 }

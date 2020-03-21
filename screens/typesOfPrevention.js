@@ -82,7 +82,7 @@ export default class TypesOfPrevention extends React.Component{
                             />
                         </View>
                     )}
-                    keyExtractor={(item) => item.id}
+                    keyExtractor={(item) => item._id}
                 />
             </View>
         );
