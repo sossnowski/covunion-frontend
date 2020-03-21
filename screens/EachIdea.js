@@ -2,9 +2,15 @@ import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, NativeModules, TextInput, Button, Keyboard } from 'react-native';
 import { ScrollView, RectButton } from 'react-native-gesture-handler';
 import fontSize from "../consts/fontSize";
+import VoteAnIdea from "../api/voteAnIdea"
 
 
 export default class EachIdea extends React.Component{
+
+    voteAnIdea = async (ideaId) => {
+        await VoteAnIdea(ideaId);
+    };
+
     constructor(props){
         super(props);
         const navigationData = this.props.navigation.state.params.idea;
@@ -28,10 +34,9 @@ export default class EachIdea extends React.Component{
                     <Text style={styles.question}>How do you like this idea?</Text>
                     <View style={styles.buttonContainer}>
                         <View style={styles.button} >
-                            <Button title={'Like it'} />
-                        </View>
-                        <View style={styles.button} >
-                            <Button title={'Not a good idea'} />
+                            <Button onPress={() => this.voteAnIdea({
+                                ideaId: this.state.eachIdea._id,
+                            })} title={'Like it'} />
                         </View>
                     </View>
                 </View>
