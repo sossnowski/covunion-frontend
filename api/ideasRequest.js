@@ -8,6 +8,6 @@ module.exports = () => {
             .then((res) => {
                resolve(res.data)
             })
-            .catch(er => reject(er))
+            .catch(er => reject(er));
     });
 };

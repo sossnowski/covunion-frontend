@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
-import { StyleSheet, Text, View} from 'react-native';import 'react-native-gesture-handler';
+import { StyleSheet, Text, View} from 'react-native';
+import 'react-native-gesture-handler';
 import {createStackNavigator} from "react-navigation-stack";
 import Home from "./screens/Home";
 import Login from "./screens/Login";
@@ -13,6 +14,7 @@ import MarketList from './screens/MarketList'
 import Select from "./screens/Select";
 import Advertisement from "./screens/Advertisment";
 import MyTasks from "./screens/MyTasks";
+import EachIdea from "./screens/EachIdea";
 import AddAdvertisement from "./screens/AddAdvertisement";
 
 const RootStack = createStackNavigator({
@@ -26,6 +28,7 @@ const RootStack = createStackNavigator({
       Select: { screen: Select},
       Advertisement: { screen: Advertisement},
       MyTasks: { screen: MyTasks},
+      EachIdea: { screen: EachIdea},
       //AddAdvertisement: { screen: AddAdvertisement},
 
     },{
