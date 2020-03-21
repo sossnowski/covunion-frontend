@@ -26,10 +26,10 @@ const RootStack = createStackNavigator({
       Select: { screen: Select},
       Advertisement: { screen: Advertisement},
       MyTasks: { screen: MyTasks},
-      AddAdvertisement: { screen: AddAdvertisement},
+      //AddAdvertisement: { screen: AddAdvertisement},
 
     },{
-      initialRouteName: 'AddAdvertisement'
+      initialRouteName: 'Home'
     }
 );const AppContainer = createAppContainer(RootStack);
 
