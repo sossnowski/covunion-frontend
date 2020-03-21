@@ -12,6 +12,7 @@ import TypesOfPrevention from "./screens/typesOfPrevention";
 import MarketList from './screens/MarketList'
 import Select from "./screens/Select";
 import Advertisement from "./screens/Advertisment";
+import MyTasks from "./screens/MyTasks";
 
 const RootStack = createStackNavigator({
       Home: {screen: Home},
@@ -23,9 +24,10 @@ const RootStack = createStackNavigator({
       MarketList: { screen: MarketList },
       Select: { screen: Select},
       Advertisement: { screen: Advertisement},
+      MyTasks: { screen: MyTasks},
 
     },{
-      initialRouteName: 'Home'
+      initialRouteName: 'MyTasks'
     }
 );const AppContainer = createAppContainer(RootStack);
 
