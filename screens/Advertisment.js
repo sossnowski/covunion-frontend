@@ -28,12 +28,20 @@ export default class AdvertisementView extends React.Component{
 
     needHelp(){
         if(this.state.advertisement.needHelp==true){
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40a4de9a01f884bcf2d3fe3ccc10e26ea4410b06
             return " need your help!! :)";
         } else return " wanna help you!! :)"
     }
 
     render(){
         return(
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40a4de9a01f884bcf2d3fe3ccc10e26ea4410b06
             <ScrollView>
                 <View style={styles.container}>
                     <View style={styles.container}>
