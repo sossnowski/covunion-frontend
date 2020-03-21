@@ -23,7 +23,7 @@ export default class LoginFormView extends React.Component{
             <ScrollView ref='scrollView' contentContainerStyle={styles.scllorer}> 
                 <View style={styles.container}>
                     <Image
-                        source={require('../consts/icons/logo1.png')}
+                        source={require('../consts/icons/logo.png')}
                         style={{marginTop:20}}
                     />
                     <View style={styles.main_container}>

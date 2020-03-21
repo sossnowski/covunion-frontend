@@ -17,7 +17,7 @@ export default class SelectRoleMarketView extends React.Component{
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('MarketList')}>
                             <View>
                                 <Image
-                                    source={require('../consts/icons/helpcolorbig.png')}
+                                    source={require('../consts/icons/checklistbig.png')}
                                 />
                             </View>
                         </TouchableOpacity>
@@ -32,7 +32,7 @@ export default class SelectRoleMarketView extends React.Component{
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('MarketList')}>
                             <View>
                                 <Image
-                                    source={require('../consts/icons/checklistbig.png')}
+                                    source={require('../consts/icons/helpcolorbig.png')}
                                 />
                             </View>
                         </TouchableOpacity>
