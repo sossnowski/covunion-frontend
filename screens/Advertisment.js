@@ -6,32 +6,36 @@ import fonts from "../consts/fontSize";
 
 
 
-export default class AdvertismentView extends React.Component{
+export default class AdvertisementView extends React.Component{
     constructor(props){
         super(props);
+        const navigationData = this.props.navigation.state.params.ad;
         this.state = {
-            ideas:{
-                "_id": "5e74d4ad499ecf6fe9a182b8",
-                "title": "ogloszenie checi wziecia pomocy",
-                "description": "jakies opis",
-                "user": "kbrzoska97@gmail.com",
-                "localization": "stalowa wola ul. jakas",
-                "date": "2020-03-20T14:35:25.823Z",
-                "coordinates": "none",
-                "needHelp": true,
-                "__v": 0
-            }
+            // advertisement:{
+            //     "_id": "5e74d4ad499ecf6fe9a182b8",
+            //     "title": "ogloszenie checi wziecia pomocy",
+            //     "description": "jakies opis",
+            //     "user": "kbrzoska97@gmail.com",
+            //     "localization": "stalowa wola ul. jakas",
+            //     "date": "2020-03-20T14:35:25.823Z",
+            //     "coordinates": "none",
+            //     "needHelp": true,
+            //     "__v": 0
+            // }
+            advertisement: navigationData
         }
     }
 
     needHelp(){
         if(this.state.advertisement.needHelp==true){
+
             return " need your help!! :)";
         } else return " wanna help you!! :)"
     }
 
     render(){
         return(
+
             <ScrollView>
                 <View style={styles.container}>
                     <View style={styles.container}>
