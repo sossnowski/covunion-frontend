@@ -20,9 +20,9 @@ const RootStack = createStackNavigator({
       NotificationBoard: {screen: NotificationBoard},
       Contact: {screen: Contact},
       TypesOfPrevention: {screen: TypesOfPrevention},
-      MarketList: { screen: MarketList }
-    Select: { screen: Select},
-    Advertisment: { screen: Advertisment},
+      MarketList: { screen: MarketList },
+      Select: { screen: Select},
+      Advertisment: { screen: Advertisment},
 
     },{
       initialRouteName: 'Home'

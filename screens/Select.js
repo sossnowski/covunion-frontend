@@ -11,8 +11,8 @@ export default class SelectRoleMarketView extends React.Component{
 
     render(){
         return(
-            <View style={styles.container}>
-                <View style={styles.main_controler}>
+            <View style={styles.main_controler}>
+                <View style={styles.container}>
                     <View style={styles.container}>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('MarketList')}>
                             <View>
@@ -38,19 +38,17 @@ export default class SelectRoleMarketView extends React.Component{
 const styles = StyleSheet.create({
     main_controler:{
         flex: 1, 
-        backgroundColor:colors.second, 
-        width: "90%", 
-        height: '60%',
-        marginVertical: 50, 
-        marginLeft:10,
-        marginRight: 10,
-        borderRadius: 14,
+        backgroundColor: colors.main, 
+        width: "100%", 
+        height: '100%',
+        flexDirection: 'column'
     },
     container:{
         alignItems:"center",
         justifyContent: 'space-around',
         flex:1,
-        flexDirection: 'row',
+        flexDirection: 'column',
+        marginVertical: 35,
     },
     box: {
         width: "30%",

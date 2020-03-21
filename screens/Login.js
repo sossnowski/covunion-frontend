@@ -20,8 +20,12 @@ export default class LoginFormView extends React.Component{
 
     render(){
         return(
-            <ScrollView > 
+            <ScrollView ref='scrollView' contentContainerStyle={styles.scllorer}> 
                 <View style={styles.container}>
+                    <Image
+                        source={require('../consts/icons/logo1.png')}
+                        style={{marginTop:20}}
+                    />
                     <View style={styles.main_container}>
                         <Text style={styles.title}>Hi Again</Text>
                         <TextInput
@@ -44,11 +48,13 @@ export default class LoginFormView extends React.Component{
                             returnKeyType = { "done" }
                             onSubmitEditing={()=>{this.logIn()}}
                         />
-                        <Button
-                            color= {colors.acceptButton}
-                            title='Log In'
-                            onPress={ this.logIn}
-                        />
+                        <View style={{marginTop:10}}>
+                            <Button
+                                color= {colors.acceptButton}
+                                title='Log In'
+                                onPress={ this.logIn}
+                            />
+                        </View>
                     </View>
                 </View>
             </ScrollView>
@@ -61,29 +67,31 @@ const styles = StyleSheet.create({
         flex:1,
         backgroundColor: colors.main,
         alignItems: "center",
-
+    },
+    scllorer:{
+        flex: 1,
+        flexDirection: 'column'
     },
     main_container: {
         width: "90%",
-        height: "90%",
-        backgroundColor: colors.second,
+        height: "60%",
+        backgroundColor: colors.main,
         alignItems: "center",
         justifyContent: 'center',
-        marginTop: 70,
         borderRadius: 14,
     },
     input: {
-        width: "80%",
-        height: "17%",
+        width: "98%",
+        height: "11%",
         backgroundColor: colors.options,
         margin: 10,
         padding: 8,
         color: colors.placeHolderColor,
-        borderRadius: 14,
         fontSize: fonts.h3,
         fontWeight: '300',
       },
     title:{
-        fontSize: fonts.h2
+        fontSize: fonts.h2,
+        marginBottom: 20
     }
 })
