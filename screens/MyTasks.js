@@ -21,15 +21,13 @@ export default class MarketList extends React.Component {
 
     componentDidMount(){
         this.getTasks().then(result => {
-            this.getListData(this.state.ownTask)
+            this.getListData(this.state.ownTask);
         })
-
     }
 
     getTasks = async () => {
         try{
-            let result = await tasksRequest()
-            console.log(result)
+            let result = await tasksRequest();
             this.setState({
                 taskDataFromDb: result.tasks
             })
@@ -37,10 +35,10 @@ export default class MarketList extends React.Component {
             console.log(error)
         }
 
-    }
+    };
 
     getListData = (value) => {
-        let listData = []
+        let listData = [];
         if (value) {
             listData = this.state.taskDataFromDb.filter(obj => {
                 return obj.owner === this.state.myEmail
@@ -52,23 +50,21 @@ export default class MarketList extends React.Component {
 
             })
         }
-
-        console.log(listData)
         this.setState({
             listData: listData
         })
-    }
+    };
 
     changeTypeOfAds = (value) => {
         this.setState({
             ownTask: value
-        })
+        });
         this.getListData(value)
-    }
+    };
 
     goToAdScreen = (ad) => {
         this.props.navigation.navigate('Advertisement', {ad: ad});
-    }
+    };
 
 
 

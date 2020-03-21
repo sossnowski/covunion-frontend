@@ -4,14 +4,10 @@ import endpoints from "../endpoints";
 
 module.exports = () => {
     return new Promise((resolve, reject) => {
-        axios.get(endpoints.getAllMyTasks, endpoints.headers)
+        axios.get(endpoints.getAllIdeas, endpoints.headers)
             .then((res) => {
-                resolve(res.data)
+               resolve(res.data)
             })
             .catch(er => reject(er))
     });
 };
-
-
-
-

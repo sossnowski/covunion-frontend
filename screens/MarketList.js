@@ -176,4 +176,4 @@ const styles = StyleSheet.create({
         color: colors.second,
         marginTop: 10
     }
-})
+});

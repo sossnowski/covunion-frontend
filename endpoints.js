@@ -19,5 +19,6 @@ export default {
         }
 
     },
-    getAllMyTasks: api + "market/allMyTasks"
+    getAllMyTasks: api + "market/allMyTasks",
+    getAllIdeas: api + "idea/allIdeas"
 }
