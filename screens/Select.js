@@ -21,6 +21,14 @@ export default class SelectRoleMarketView extends React.Component{
                                 />
                             </View>
                         </TouchableOpacity>
+                        <View
+                            style={{
+                                height: 1,
+                                width: 200,
+                                borderBottomColor: '#C3C3C3',
+                                borderBottomWidth: 1,
+                            }}
+                        />
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('MarketList')}>
                             <View>
                                 <Image
