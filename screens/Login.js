@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, NativeModules, TextInput, Button, Keyboard } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import colors from "../consts/colors";
-import fonts from "../consts/fontSize";
 
 export default class LoginFormView extends React.Component{
     constructor(props){
@@ -23,7 +21,6 @@ export default class LoginFormView extends React.Component{
             <ScrollView > 
                 <View style={styles.container}>
                     <View style={styles.main_container}>
-                        <Text style={styles.title}>Hi Again</Text>
                         <TextInput
                             style={styles.input}
                             placeholder="Username"
@@ -45,7 +42,7 @@ export default class LoginFormView extends React.Component{
                             onSubmitEditing={()=>{this.logIn()}}
                         />
                         <Button
-                            color= {colors.acceptButton}
+                            style={styles.button}
                             title='Log In'
                             onPress={ this.logIn}
                         />
@@ -59,31 +56,36 @@ export default class LoginFormView extends React.Component{
 const styles = StyleSheet.create({
     container: {
         flex:1,
-        backgroundColor: colors.main,
+        backgroundColor: 'skyblue',
         alignItems: "center",
 
     },
     main_container: {
-        width: "90%",
-        height: "90%",
-        backgroundColor: colors.second,
+        width: 300,
+        height: 500,
+        backgroundColor: 'skyblue',
         alignItems: "center",
         justifyContent: 'center',
-        marginTop: 70,
-        borderRadius: 14,
+        marginTop: 30,
     },
     input: {
-        width: "80%",
-        height: "17%",
-        backgroundColor: colors.options,
+        width: 250,
+        height: 55,
+        backgroundColor: '#42A5F5',
         margin: 10,
         padding: 8,
-        color: colors.placeHolderColor,
+        color: 'grey',
         borderRadius: 14,
-        fontSize: fonts.h3,
+        fontSize: 18,
         fontWeight: '300',
       },
-    title:{
-        fontSize: fonts.h2
+    text:{
+        padding: 10,
+        fontSize: 42
+    },
+    button:{
+        width: 200,
+        height:85,
+        borderRadius: 2,
     }
 })

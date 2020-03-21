@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, NativeModules, TextInput, Button, Keyboard } from 'react-native';
 import { ScrollView, RectButton } from 'react-native-gesture-handler';
-import colors from "../consts/colors";
-import fonts from "../consts/fontSize";
+
 
 
 
@@ -26,28 +25,24 @@ export default class AdvertismentView extends React.Component{
 
     needHelp(){
         if(this.state.advertisement.needHelp==true){
-            return " need your help!! :)";
-        } else return " wanna help you!! :)"
+            return "need your help!! :)";
+        } else return "wanna help you!! :)"
     }
 
     render(){
         return(
-            <ScrollView>
-                <View style={styles.container}>
-                    <View style={styles.container}>
-                        <View style={styles.top_bar}>
-                            <Text style={styles.needHelpText}>{this.state.advertisement.user}{this.needHelp()}</Text>
-                        </View>
-                        <View style={styles.localization_date}>
-                            <View><Text style={styles.localization_date_text}>{this.state.advertisement.localization}</Text></View>
-                            <View><Text style={styles.localization_date_text}>{this.state.advertisement.date}</Text></View>
-                        </View>
-                        <View style={styles.title}><Text style={styles.title_text}>{this.state.advertisement.title}</Text></View>
-                        <View style={styles.description}><Text style={styles.description_text}>{this.state.advertisement.description}</Text></View>
-                    </View>
+
+            <View style={styles.container}>
+                <View style={styles.top_bar}>
+        <Text style={styles.needHelpText}>{this.state.advertisement.user}{this.needHelp()}</Text>
                 </View>
-            </ScrollView>
-            
+                <View style={styles.localization_date}>
+                    <View><Text>{this.state.advertisement.localization}</Text></View>
+                    <View><Text>{this.state.advertisement.date}</Text></View>
+                </View>
+                <View style={styles.title}><Text style={{fontSize:20}}>{this.state.advertisement.title}</Text></View>
+                <View style={styles.description}><Text>{this.state.advertisement.description}</Text></View>
+            </View>
         );
     }
 
@@ -55,30 +50,26 @@ export default class AdvertismentView extends React.Component{
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: colors.main,
-        marginTop: 20,
+        flex: 0.9,
+        backgroundColor: '#C4E2FF',
+        marginTop: 40,
         marginHorizontal: 10
 
     },
     top_bar:{
-        flex: 1,
-        backgroundColor: colors.second,
+        flex: 0.2,
+        backgroundColor: '#99CCFF',
         alignItems: "center",
-        justifyContent: 'center',
-        textAlign:"center",
+        justifyContent: 'center'
     },
     needHelpText:{
-        fontSize: fonts.h1
+        fontSize: 25
     },
     localization_date:{
         alignItems: 'flex-end',
         marginRight: 5,
         marginTop: 5,
         marginBottom: 40
-    },
-    localization_date_text:{
-        fontSize: fonts.h4,
     },
     title:{
         alignItems:"center",
@@ -89,11 +80,5 @@ const styles = StyleSheet.create({
         alignItems:"center",
         marginHorizontal: 25,
         marginVertical: 30
-    },
-    description_text:{
-        fontSize: fonts.h3,
-    },
-    title_text:{
-        fontSize: fonts.h2,
     }
 })
