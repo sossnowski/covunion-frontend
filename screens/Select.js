@@ -17,7 +17,7 @@ export default class SelectRoleMarketView extends React.Component{
                 />
                 <View style={styles.container}>
                     <View style={styles.container}>
-                        <TouchableOpacity style={styles.image} onPress={() => this.props.navigation.navigate('MarketList')}>
+                        <TouchableOpacity style={styles.image} onPress={() => this.props.navigation.navigate('TypesOfPrevention')}>
                             <View style={styles.box}>
                                 <Image
                                     source={require('../consts/icons/checklistbig.png')}

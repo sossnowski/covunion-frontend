@@ -31,6 +31,9 @@ function Item({ title }) {
 
 
 export default class TypesOfPrevention extends React.Component{
+    static navigationOptions = {
+        title: "User Best Ideas",
+    };
 
     constructor(props) {
         super(props);
@@ -73,8 +76,9 @@ export default class TypesOfPrevention extends React.Component{
                     renderItem={({item}) => (
                         <View>
                             <ListItem
-                                title = {`${item.author}`}
-                                subtitle = {`${item.title}`}
+                                title = {
+                                    <Text style={styles.itemTitle}>{item.title}</Text>
+                                }
                                 onPress={() => goToEachIdea(item)}
                                 bottomDivider
                                 rightIcon = {{ name: 'keyboard-arrow-right', style: { color: colors.second } }}
@@ -102,4 +106,9 @@ const styles = StyleSheet.create({
         borderBottomColor: colors.second,
         fontSize: fontSize.listFieldText,
     },
+    itemTitle: {
+        justifyContent: "center",
+        fontWeight: "bold",
+
+    }
 });

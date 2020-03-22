@@ -90,6 +90,17 @@ export default class RegisterFormView extends React.Component{
                             returnKeyType = { "done" }
                             onSubmitEditing={()=>{this.signUp()}}
                         />
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Repeat password"
+                            secureTextEntry={true}
+                            onChangeText={(val) => this.onChangeText('password', val)}
+                            value={this.state.password}
+                            blurOnSubmit={ false }
+                            ref={(input) => { this.Password = input; }}
+                            returnKeyType = { "done" }
+                            onSubmitEditing={()=>{this.signUp()}}
+                        />
                         <Button
                             color= {colors.acceptButton}
                             title='Sign Up'
@@ -138,7 +149,7 @@ const styles = StyleSheet.create({
     input: {
         width: "98%",
         height: "11%",
-        backgroundColor: colors.options,
+        backgroundColor: colors.white,
         margin: 10,
         padding: 8,
         color: colors.placeHolderColor,
@@ -149,6 +160,7 @@ const styles = StyleSheet.create({
         marginTop: 40,
         fontSize: fonts.h3,
         marginBottom: 20,
-        fontWeight: '500'
+        fontWeight: '500',
+        color: colors.acceptButton
     }
 })

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, NativeModules, TextInput, Button, Keyboard } from 'react-native';
 import { ScrollView, RectButton } from 'react-native-gesture-handler';
 import fontSize from "../consts/fontSize";
+import colors from "../consts/colors";
 
 
 export default class EachIdea extends React.Component{
@@ -18,29 +19,20 @@ export default class EachIdea extends React.Component{
 
             <ScrollView>
                 <View style={styles.container}>
-                    <Text style={styles.eachRow}><Text style={{fontSize:fontSize.h3}}>Author: </Text>{this.state.eachIdea.author}</Text>
-                    <Text style={styles.eachRow}><Text style={{fontSize:fontSize.h3}}>Title: </Text> {this.state.eachIdea.title}</Text>
-                    <Text style={styles.eachRow}><Text style={{fontSize:fontSize.h3}}>Votes: </Text>{this.state.eachIdea.votes}</Text>
-                    <Text style={styles.eachRow}><Text style={{fontSize:fontSize.h3}}>Description: </Text></Text>
-                    <Text style={styles.description}>{this.state.eachIdea.description}</Text>
+                    <Text style={styles.title}>{this.state.eachIdea.title}</Text>
+                    <Text style={styles.subtitle}>{this.state.eachIdea.description} </Text>
+                    <Text style={{fontSize:fontSize.h4, textAlign: 'right', marginRight: 20 }}>{this.state.eachIdea.author}</Text>
+                    <Text style={{fontSize:fontSize.h3}}></Text>
+
                 </View>
                 <View>
-                    <Text style={styles.question}>How do you like this idea?</Text>
                     <View style={styles.buttonContainer}>
-                        <View style={styles.button} >
-                            <Button title={'Like it'} />
-                        </View>
-                        <View style={styles.button} >
-                            <Button title={'Not a good idea'} />
-                        </View>
+                        <TouchableOpacity style={styles.button}>
+                            <Text style={{color: 'white'}}>Like</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
-                <View>
-                    <Button
-                        onPress={() => this.props.navigation.goBack()}
-                        title={'Go back'}
-                    />
-                </View>
+
             </ScrollView>
 
         );
@@ -70,11 +62,27 @@ const styles = StyleSheet.create({
     },
     button: {
         width: '40%',
-        height: 40
+        height: 40,
+        backgroundColor: colors.acceptButton,
+        marginLeft: '30%',
+        alignItems: 'center',
+        paddingTop: 10,
+        color: 'white',
+        borderRadius: 3
     },
     question: {
         fontSize: fontSize.h3,
         marginTop:20,
         marginLeft: 10
+    },
+    title: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginBottom: 40
+    },
+    subtitle: {
+        fontSize: 17,
+        marginBottom: 30,
     }
 });

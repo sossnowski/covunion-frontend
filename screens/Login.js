@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     input: {
         width: "98%",
         height: "11%",
-        backgroundColor: colors.options,
+        backgroundColor: colors.white,
         margin: 10,
         padding: 8,
         color: colors.placeHolderColor,
@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
     title:{
         fontSize: fonts.h3,
         marginBottom: 20,
-        fontWeight: '500'
+        fontWeight: '500',
+        color: colors.acceptButton
     }
 })
